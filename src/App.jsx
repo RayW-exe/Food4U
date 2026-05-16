@@ -82,10 +82,10 @@ function App() {
 
   return (
     <>
-     <nav>
-       <Link to="/Dashboard">DashBoard</Link>
-       <Link to="/Recipes">Recipes</Link>
-       <Link to="/ContactUs">Contact Us</Link>
+     <nav className='bg-linear-to-r from-orange-500 via-yellow-300 to-orange-500 backdrop-blur-md shadow-lg px-8 py-5 flex justify-center gap-8 sticky top-0 z-50 border-b border-red-500'>
+       <Link to="/Dashboard" className="bg-white/30 p-3 rounded-2xl hover:bg-white/40">DashBoard</Link>
+       <Link to="/Recipes" className="bg-white/30 p-3 rounded-2xl hover:bg-white/40">Recipes</Link>
+       <Link to="/ContactUs" className="bg-white/30 p-3 rounded-2xl hover:bg-white/40">Contact Us</Link>
      </nav>
 
      <Routes>
