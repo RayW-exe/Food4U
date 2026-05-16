@@ -7,6 +7,7 @@ import Dashboard from './Pages/Dashboard'
 import FastFoods from './Pages/FastFoods'
 import Drinks from './Pages/Drinks'
 import BakedProducts from './Pages/BakedProducts'
+import Contactus from './Pages/ContactUs'
 
 
 
@@ -84,6 +85,7 @@ function App() {
      <nav>
        <Link to="/Dashboard">DashBoard</Link>
        <Link to="/Recipes">Recipes</Link>
+       <Link to="/ContactUs">Contact Us</Link>
      </nav>
 
      <Routes>
@@ -94,7 +96,7 @@ function App() {
         <Route path="/FastFoods" element={<FastFoods fastFoodItems={fastFoodItems} search={search} setSearch={setSearch}/>}/>
         <Route path="/Drinks" element={<Drinks drinksItems={drinksItems} search={search} setSearch={setSearch}/>}/>
         <Route path="/BakedProducts" element={<BakedProducts bakedItems={bakedItems} search={search} setSearch={setSearch}/>}/>
-
+        <Route path="/Contactus" element={<Contactus />} />
      </Routes>
     </>
   )
