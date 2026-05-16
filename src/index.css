@@ -1,1 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kablammo&display=swap");
 @import 'tailwindcss';
+@theme {
+    --font-food: 'Kablammo', sans-serif;
+}
