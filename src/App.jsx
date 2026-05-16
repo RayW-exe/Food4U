@@ -17,6 +17,7 @@ function App() {
   const [fastFoodItems, setFastFoodItems] = useState("")
   const [drinksItems, setDrinKsItems] = useState("")
   const [bakedItems, setBakedItems] = useState("")
+  const [search, setSearch] = useState("")
 
   const navigate = useNavigate();
 
@@ -90,9 +91,9 @@ function App() {
         <Route path="/Register" element={<Register userName={userName} setUsername={setUsername} password={password} setPassword={setPassword} onRegister={handleRegister}/>}/>
         <Route path="/Recipes" element={<Recipes />}/>
         <Route path="/Dashboard" element={<Dashboard />}/>
-        <Route path="/FastFoods" element={<FastFoods fastFoodItems={fastFoodItems}/>}/>
-        <Route path="/Drinks" element={<Drinks drinksItems={drinksItems}/>}/>
-        <Route path="/BakedProducts" element={<BakedProducts bakedItems={bakedItems}/>}/>
+        <Route path="/FastFoods" element={<FastFoods fastFoodItems={fastFoodItems} search={search} setSearch={setSearch}/>}/>
+        <Route path="/Drinks" element={<Drinks drinksItems={drinksItems} search={search} setSearch={setSearch}/>}/>
+        <Route path="/BakedProducts" element={<BakedProducts bakedItems={bakedItems} search={search} setSearch={setSearch}/>}/>
 
      </Routes>
     </>
