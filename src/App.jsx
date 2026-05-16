@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Route,Routes,Link, useNavigate } from 'react-router'
 import Recipes from './Pages/Recipes'
 import Register from './Pages/Register'
@@ -7,14 +7,17 @@ import Dashboard from './Pages/Dashboard'
 import FastFoods from './Pages/FastFoods'
 import Drinks from './Pages/Drinks'
 import BakedProducts from './Pages/BakedProducts'
-import Recipes from './Pages/Recipes'
+
 
 
 
 function App() {
   const [userName, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const[currentUser, setCurrentUser] = useState(null)
+  const [fastFoodItems, setFastFoodItems] = useState("")
+  const [drinksItems, setDrinKsItems] = useState("")
+  const [bakedItems, setBakedItems] = useState("")
+
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -56,6 +59,25 @@ function App() {
     .catch((error) => console.error("Registration error!:", error))
   }
 
+  useEffect(() => {
+    fetch("http://localhost:3000/fastfoods")
+    .then(response => response.json())
+    .then(data => setFastFoodItems(data))
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/drinks")
+    .then(response => response.json())
+    .then(data => setDrinKsItems(data))
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/bakedfoods")
+    .then(response => response.json())
+    .then(data => setBakedItems(data))
+  }, []);
+  
+
   return (
     <>
      <nav>
@@ -69,10 +91,10 @@ function App() {
         <Route path="/" element={<Login userName={userName} setUsername={setUsername} password={password} setPassword={setPassword} onLogin={handleLogin}/>} />
         <Route path="/Register" element={<Register userName={userName} setUsername={setUsername} password={password} setPassword={setPassword} onRegister={handleRegister}/>}/>
         <Route path="/Recipes" element={<Recipes />}/>
-        <Route path="/Dashboard" element={<Dashboard currentUser={currentUser}/>}/>
-        <Route path="/FastFoods" element={<FastFoods />}/>
-        <Route path="/Drinks" element={<Drinks />}/>
-        <Route path="/BakedProducts" element={<BakedProducts />}/>
+        <Route path="/Dashboard" element={<Dashboard />}/>
+        <Route path="/FastFoods" element={<FastFoods fastFoodItems={fastFoodItems}/>}/>
+        <Route path="/Drinks" element={<Drinks drinksItems={drinksItems}/>}/>
+        <Route path="/BakedProducts" element={<BakedProducts bakedItems={bakedItems}/>}/>
 
      </Routes>
     </>

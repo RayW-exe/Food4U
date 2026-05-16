@@ -1,9 +1,9 @@
-import React from "react";
+import BakedProductsList from "../Components/BakedProductsList";
 
-function BakedProducts () {
+function BakedProducts ({bakedItems}) {
     return(
         <>
-        
+          <BakedProductsList bakedItems={bakedItems} />
         </>
     )
 }

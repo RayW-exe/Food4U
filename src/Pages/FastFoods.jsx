@@ -1,9 +1,9 @@
-import React from "react";
+import FastFoodsList from "../Components/FastFoodsList";
 
-function FastFoods () {
+function FastFoods ({fastFoodItems}) {
     return(
         <>
-        
+         <FastFoodsList fastFoodItems={fastFoodItems}/>
         </>
     )
 }

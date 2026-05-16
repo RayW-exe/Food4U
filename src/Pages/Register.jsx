@@ -1,4 +1,3 @@
-import React from "react";
 
 function Register ({username, password, setPassword, setUsername, onRegister}) {
     function handleSubmit (e) {

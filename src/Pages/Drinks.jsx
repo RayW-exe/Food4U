@@ -1,9 +1,9 @@
-import React from "react";
+import DrinksList from "../Components/DrinksList";
 
-function Drinks () {
+function Drinks ({drinksItems}) {
     return(
         <>
-        
+         <DrinksList drinksItems={drinksItems} />
         </>
     )
 }
