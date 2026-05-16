@@ -81,8 +81,6 @@ function App() {
   return (
     <>
      <nav>
-       <Link to="/">Login Page</Link>
-       <Link to="/Register">Register Page</Link>
        <Link to="/Dashboard">DashBoard</Link>
        <Link to="/Recipes">Recipes</Link>
      </nav>
