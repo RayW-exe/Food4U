@@ -1,23 +1,28 @@
 import { useState } from 'react'
 import { Route,Routes,Link, useNavigate } from 'react-router'
-import Shop from './Pages/Shop'
+import Recipes from './Pages/Recipes'
 import Register from './Pages/Register'
 import Login from './Pages/Login'
 import Dashboard from './Pages/Dashboard'
+import FastFoods from './Pages/FastFoods'
+import Drinks from './Pages/Drinks'
+import BakedProducts from './Pages/BakedProducts'
+import Recipes from './Pages/Recipes'
 
 
 
 function App() {
   const [userName, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const[currentUser, setCurrentUser] = useState(null)
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    fetch("")
+    fetch("http://localhost:3000/users")
     .then(response => response.json())
     .then((users) => {
       const findUser = users.find(
-        (use) => use.username === userName && use.password === password
+        (userr) => userr.username === userName && userr.password === password
       );
 
       if(findUser){
@@ -31,11 +36,11 @@ function App() {
   
   const handleRegister = () => {
     const newUser = {
-      username:username,
+      username:userName,
       password:password
     };
 
-    fetch("",{
+    fetch("http://localhost:3000/users",{
       method:"POST",
       headers:{
         "Content-Type":"application.json",
@@ -57,14 +62,18 @@ function App() {
        <Link to="/">Login Page</Link>
        <Link to="/Register">Register Page</Link>
        <Link to="/Dashboard">DashBoard</Link>
-       <Link to="/Shop">Recipes</Link>
+       <Link to="/Recipes">Recipes</Link>
      </nav>
 
      <Routes>
-        <Route path="/" element={<Login userName={userName} setUsername={setUsername} password={password} setpassword={setPassword} onLogin={handleLogin}/>} />
-        <Route path="/Register" element={<Register userName={userName} setUsername={setUsername} password={password} setpassword={setPassword} onRegister={handleRegister}/>}/>
-        <Route path="/Shop" element={<Shop />}/>
-        <Route path="/Dashboard" element={<Dashboard />}/>
+        <Route path="/" element={<Login userName={userName} setUsername={setUsername} password={password} setPassword={setPassword} onLogin={handleLogin}/>} />
+        <Route path="/Register" element={<Register userName={userName} setUsername={setUsername} password={password} setPassword={setPassword} onRegister={handleRegister}/>}/>
+        <Route path="/Recipes" element={<Recipes />}/>
+        <Route path="/Dashboard" element={<Dashboard currentUser={currentUser}/>}/>
+        <Route path="/FastFoods" element={<FastFoods />}/>
+        <Route path="/Drinks" element={<Drinks />}/>
+        <Route path="/BakedProducts" element={<BakedProducts />}/>
+
      </Routes>
     </>
   )

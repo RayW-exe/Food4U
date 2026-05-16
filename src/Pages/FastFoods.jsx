@@ -1,6 +1,6 @@
 import React from "react";
 
-function Shop () {
+function FastFoods () {
     return(
         <>
         
@@ -8,4 +8,4 @@ function Shop () {
     )
 }
 
-export default Shop;
+export default FastFoods;
