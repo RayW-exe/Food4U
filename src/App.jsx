@@ -27,7 +27,7 @@ function App() {
   const location = useLocation();
 
   const handleLogin = () => {
-    fetch("http://localhost:3000/users")
+    fetch("https://food4u-api-u42t.onrender.com/users")
     .then(response => response.json())
     .then((users) => {
       const findUser = users.find(
@@ -62,10 +62,10 @@ function App() {
       dateOfBirth:dateOfBirth
     };
 
-    fetch("http://localhost:3000/users",{
+    fetch("https://food4u-api-u42t.onrender.com/users",{
       method:"POST",
       headers:{
-        "Content-Type":"application.json",
+        "Content-Type":"application/json",
       },
       body:JSON.stringify(newUser),
     })
@@ -79,19 +79,19 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:3000/fastfoods")
+    fetch("https://food4u-api-u42t.onrender.com/fastfoods")
     .then(response => response.json())
     .then(data => setFastFoodItems(data))
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/drinks")
+    fetch("https://food4u-api-u42t.onrender.com/drinks")
     .then(response => response.json())
     .then(data => setDrinKsItems(data))
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/bakedfoods")
+    fetch("https://food4u-api-u42t.onrender.com/bakedfoods")
     .then(response => response.json())
     .then(data => setBakedItems(data))
   }, []);
