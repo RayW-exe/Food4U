@@ -1,8 +1,8 @@
 import DrinksList from "../Components/DrinksList";
 
 function Drinks ({drinksItems, search, setSearch}) {
-      const filterSearch = drinkItems.filter((drinkItem) => {
-    return drinkItem.name.toLowerCase().includes(search.toLowerCase())
+      const filterSearch = drinksItems.filter((drinksItem) => {
+    return drinksItem.name.toLowerCase().includes(search.toLowerCase())
   })
 
     return(

@@ -8,7 +8,7 @@ import FastFoods from './Pages/FastFoods'
 import Drinks from './Pages/Drinks'
 import BakedProducts from './Pages/BakedProducts'
 import Contactus from './Pages/ContactUs'
-
+import ProtectedRoutes from './Components/ProtectedRoutes'
 
 
 
@@ -100,21 +100,27 @@ function App() {
     <>
     {location.pathname !== '/' && location.pathname !== '/Register' && (
       <nav className='bg-linear-to-r from-orange-500 via-yellow-300 to-orange-500 backdrop-blur-md shadow-lg px-8 py-5 flex justify-center gap-8 sticky top-0 z-50 border-b border-red-500'>
-        <Link to="/Dashboard" className="bg-white/30 p-3 rounded-2xl hover:bg-white/40">DashBoard</Link>
-        <Link to="/Recipes" className="bg-white/30 p-3 rounded-2xl hover:bg-white/40">Recipes</Link>
-        <Link to="/ContactUs" className="bg-white/30 p-3 rounded-2xl hover:bg-white/40">Contact Us</Link>
+        <Link to="/Dashboard" className="bg-white/30 p-3 rounded-2xl hover:bg-white/40 font-food text-2xl">DashBoard</Link>
+        <Link to="/Recipes" className="bg-white/30 p-3 rounded-2xl hover:bg-white/40 font-food text-2xl">Recipes</Link>
+        <Link to="/ContactUs" className="bg-white/30 p-3 rounded-2xl hover:bg-white/40 font-food text-2xl">Contact Us</Link>
       </nav>
     )}
 
      <Routes>
         <Route path="/" element={<Login userName={userName} setUsername={setUsername} password={password} setPassword={setPassword} onLogin={handleLogin}/>} />
         <Route path="/Register" element={<Register userName={userName} setUsername={setUsername} password={password} setPassword={setPassword} onRegister={handleRegister} email={email} setEmail={setEmail} dateOfBirth={dateOfBirth} setDateOfBirth={setDateOfBirth}/>}/>
-        <Route path="/Recipes" element={<Recipes />}/>
-        <Route path="/Dashboard" element={<Dashboard userName={userName} email={email} dateOfBirth={dateOfBirth} onLogout={handleLogout} />}/>
+        <Route path="/Recipes" element={<ProtectedRoutes userName={username}>  
+          <Recipes />
+        </ProtectedRoutes>}/>
+        <Route path="/Dashboard" element={<ProtectedRoutes userName={username}>
+          <Dashboard userName={userName} email={email} dateOfBirth={dateOfBirth} onLogout={handleLogout} />
+        </ProtectedRoutes>}/>
         <Route path="/FastFoods" element={<FastFoods fastFoodItems={fastFoodItems} search={search} setSearch={setSearch}/>}/>
         <Route path="/Drinks" element={<Drinks drinksItems={drinksItems} search={search} setSearch={setSearch}/>}/>
         <Route path="/BakedProducts" element={<BakedProducts bakedItems={bakedItems} search={search} setSearch={setSearch}/>}/>
-        <Route path="/Contactus" element={<Contactus />} />
+        <Route path="/Contactus" element={<ProtectedRoutes userName={username}>
+          <Contactus />
+          </ProtectedRoutes>} />
      </Routes>
     </>
   )
