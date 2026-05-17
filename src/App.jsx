@@ -109,16 +109,16 @@ function App() {
      <Routes>
         <Route path="/" element={<Login userName={userName} setUsername={setUsername} password={password} setPassword={setPassword} onLogin={handleLogin}/>} />
         <Route path="/Register" element={<Register userName={userName} setUsername={setUsername} password={password} setPassword={setPassword} onRegister={handleRegister} email={email} setEmail={setEmail} dateOfBirth={dateOfBirth} setDateOfBirth={setDateOfBirth}/>}/>
-        <Route path="/Recipes" element={<ProtectedRoutes userName={username}>  
+        <Route path="/Recipes" element={<ProtectedRoutes userName={userName}>  
           <Recipes />
         </ProtectedRoutes>}/>
-        <Route path="/Dashboard" element={<ProtectedRoutes userName={username}>
+        <Route path="/Dashboard" element={<ProtectedRoutes userName={userName}>
           <Dashboard userName={userName} email={email} dateOfBirth={dateOfBirth} onLogout={handleLogout} />
         </ProtectedRoutes>}/>
         <Route path="/FastFoods" element={<FastFoods fastFoodItems={fastFoodItems} search={search} setSearch={setSearch}/>}/>
         <Route path="/Drinks" element={<Drinks drinksItems={drinksItems} search={search} setSearch={setSearch}/>}/>
         <Route path="/BakedProducts" element={<BakedProducts bakedItems={bakedItems} search={search} setSearch={setSearch}/>}/>
-        <Route path="/Contactus" element={<ProtectedRoutes userName={username}>
+        <Route path="/Contactus" element={<ProtectedRoutes userName={userName}>
           <Contactus />
           </ProtectedRoutes>} />
      </Routes>
