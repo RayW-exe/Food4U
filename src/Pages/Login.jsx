@@ -26,7 +26,7 @@ function Login ({username, password, setPassword, setUsername, onLogin}) {
                 <h1 className="text-6xl text-center font-food font-extrabold mb-4">
                     Food4U
                 </h1>
-                <form onSubmit={ handleSubmit } className="rounded-xl flex items-center justify-center h-55 m-7">
+                <form onSubmit={ handleSubmit } className="rounded-xl flex items-center justify-center max-h-150 m-7">
                     <div>
                         <h2 className="underline text-5xl font-semibold">
                             LOG-IN

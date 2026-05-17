@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-function Register ({username, password, setPassword, setUsername, onRegister}) {
+function Register ({username, password, setPassword, setUsername, onRegister, email, setEmail, dateOfBirth, setDateOfBirth}) {
     function handleSubmit (e) {
         e.preventDefault();
         onRegister();
@@ -14,13 +14,21 @@ function Register ({username, password, setPassword, setUsername, onRegister}) {
       setPassword(e.target.value)
    }
 
+   const handleChange3 = (e) => {
+      setEmail(e.target.value)
+   }
+
+   const handleChange4 = (e) => {
+      setDateOfBirth(e.target.value)
+   }
+
     return(
         <>
         <div className="min-h-screen bg-linear-to-b from-yellow-300 via-yellow-500 to-orange-600 flex items-center justify-center">
             <div className="bg-white/50 backdrop-blur-md border-white/60 rounded-4xl shadow-2xl/35 p-8 md:p-14 w-full max-w-5xl">
                 <h1 className="text-3xl text-center">Welcome to</h1>
                 <h1 className="text-6xl text-center font-food font-extrabold mb-8">Food4U</h1>
-                <form onSubmit={ handleSubmit } className="rounded-xl flex items-center justify-center h-55 m-7">
+                <form onSubmit={ handleSubmit } className="rounded-xl flex items-center justify-center max-h-150 m-7">
                     <div>
                         <h1 className="underline text-5xl font-semibold">Register an account</h1>
                         <label htmlFor="name" className="text-3xl">Username:</label>
@@ -38,6 +46,24 @@ function Register ({username, password, setPassword, setUsername, onRegister}) {
                         placeholder="Type your password..."
                         value={password}
                         onChange={handleChange2}
+                        required
+                        className="border border-slate-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-2 focus:bg-white"
+                        /> 
+                        <label htmlFor="email" className="text-3xl">Email:</label>
+                        <input 
+                        type="text"
+                        placeholder="Type your email..."
+                        value={email}
+                        onChange={handleChange3}
+                        required
+                        className="border border-slate-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-2 focus:bg-white"
+                        /> 
+                        <label htmlFor="dateOfBirth" className="text-3xl">Date of Birth:</label>
+                        <input 
+                        type="text"
+                        placeholder="Type your date of birth e.g yyyy-mm-dd..."
+                        value={dateOfBirth}
+                        onChange={handleChange4}
                         required
                         className="border border-slate-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-2 focus:bg-white"
                         /> 

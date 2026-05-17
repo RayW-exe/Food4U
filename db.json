@@ -3,12 +3,16 @@
     {
       "id": "1",
       "password": "pass11223344",
-      "username": "admin_web"
+      "username": "admin_web",
+      "email": "admin@gmail.com",
+      "dateOfBirth": "1990-01-01"
     },
     {
       "username": "ray",
       "password": "Ray11",
-      "id": "uORSP-dw9zk"
+      "id": "uORSP-dw9zk",
+      "email": "ray@gmail.com",
+      "dateOfBirth": "2007-08-21"
     }
   ],
   "fastfoods": [
