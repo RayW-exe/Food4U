@@ -38,7 +38,7 @@ function Register ({username, password, setPassword, setUsername, onRegister, em
                         value={username}
                         onChange={handleChange1}
                         required
-                        className="border border-slate-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-0"
+                        className="border border-slate-300 focus:bg-white rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-0"
                         /> 
                         <label htmlFor="password" className="text-xl sm:text-2xl">Password:</label>
                         <input 
@@ -47,7 +47,7 @@ function Register ({username, password, setPassword, setUsername, onRegister, em
                         value={password}
                         onChange={handleChange2}
                         required
-                        className="border border-slate-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-0"
+                        className="border border-slate-300 focus:bg-white rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-0"
                         /> 
                         <label htmlFor="email" className="text-xl sm:text-2xl">Email:</label>
                         <input 
@@ -56,7 +56,7 @@ function Register ({username, password, setPassword, setUsername, onRegister, em
                         value={email}
                         onChange={handleChange3}
                         required
-                        className="border border-slate-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-0"
+                        className="border border-slate-300 focus:bg-white rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-0"
                         /> 
                         <label htmlFor="dateOfBirth" className="text-xl sm:text-2xl">Date of Birth:</label>
                         <input 
@@ -65,7 +65,7 @@ function Register ({username, password, setPassword, setUsername, onRegister, em
                         value={dateOfBirth}
                         onChange={handleChange4}
                         required
-                        className="border border-slate-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-0"
+                        className="border border-slate-300 focus:bg-white rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-0"
                         /> 
                         <button type="submit" className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded w-full sm:w-auto">
                         Register
