@@ -1,7 +1,7 @@
 import FastFoodsList from "../Components/FastFoodsList";
 
 function FastFoods ({fastFoodItems, search, setSearch}) {
-      const filterSearch = fastFoodItems.filter((fastFoodItem) => {
+      const filterSearch = (fastFoodItems || []).filter((fastFoodItem) => {
     return fastFoodItem.name.toLowerCase().includes(search.toLowerCase())
   })
 
