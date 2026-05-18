@@ -30,6 +30,9 @@ function Contactus () {
                           <label htmlFor="Reason" className="text-xl sm:text-2xl">Enter your reason to contact us:</label> 
                           <textarea name="reason" id="rs" cols="100" rows="5" placeholder="Enter text here..." className="border border-slate-300 rounded-md px-3 py-2 focus:bg-white w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"></textarea>
                         </div>
+                        <button type="submit" className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded w-full sm:w-auto">
+                        Submit
+                        </button>
                     </div>
                 </form>
             </div>
