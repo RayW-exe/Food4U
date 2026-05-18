@@ -18,39 +18,39 @@ function Login ({username, password, setPassword, setUsername, onLogin}) {
 
     return(
         <>
-        <div className="min-h-screen bg-linear-to-b from-yellow-300 via-yellow-500 to-orange-600 flex items-center justify-center">
-            <div className="bg-white/50 backdrop-blur-md border-white/60 rounded-4xl shadow-2xl/35 p-8 md:p-14 w-full max-w-5xl">
-                <h1 className="text-3xl text-center">
+        <div className="min-h-screen bg-linear-to-b from-yellow-300 via-yellow-500 to-orange-600 flex items-center justify-center px-4 py-8">
+            <div className="bg-white/50 backdrop-blur-md border-white/60 rounded-4xl shadow-2xl/35 p-6 sm:p-10 w-full max-w-3xl">
+                <h1 className="text-3xl sm:text-4xl text-center">
                     WELCOME TO
                 </h1>
-                <h1 className="text-6xl text-center font-food font-extrabold mb-4">
+                <h1 className="text-5xl sm:text-6xl text-center font-food font-extrabold mb-4">
                     Food4U
                 </h1>
-                <form onSubmit={ handleSubmit } className="rounded-xl flex items-center justify-center max-h-150 m-7">
-                    <div>
-                        <h2 className="underline text-5xl font-semibold">
+                <form onSubmit={ handleSubmit } className="rounded-xl flex items-center justify-center m-0">
+                    <div className="space-y-4">
+                        <h2 className="underline text-3xl sm:text-4xl font-semibold text-center">
                             LOG-IN
                         </h2>
-                        <label htmlFor="username" className="text-3xl">Username:</label>
+                        <label htmlFor="username" className="text-xl sm:text-2xl">Username:</label>
                         <input 
                         type="text"
                         placeholder="Type your username..."
                         value={username}
                         onChange={handleChange1}
                         required
-                        className="border border-slate-300 rounded-md px-3 py-2 focus:bg-white w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-2 "
+                        className="border border-slate-300 rounded-md px-3 py-2 focus:bg-white w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-0"
                         /> 
-                        <label htmlFor="password" className="text-3xl">Password:</label>
+                        <label htmlFor="password" className="text-xl sm:text-2xl">Password:</label>
                         <input 
                         type="password"
                         placeholder="Type your password..."
                         value={password}
                         onChange={handleChange2}
                         required
-                        className="border border-slate-300 rounded-md px-3 py-2 focus:bg-white w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-2 "
+                        className="border border-slate-300 rounded-md px-3 py-2 focus:bg-white w-full focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 m-0"
                         /> 
                         <button type="submit"
-                        className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 focus:bg-white/25 px-4 rounded m-2">
+                        className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded w-full sm:w-auto">
                         Login
                         </button>
                     </div>

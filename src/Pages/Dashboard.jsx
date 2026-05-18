@@ -2,11 +2,11 @@
 function Dashboard ({userName, email, dateOfBirth, onLogout}) {
     return(
         <>
-         <div className="min-h-screen bg-linear-to-b from-yellow-300 via-yellow-500 to-orange-600 flex flex-col items-center justify-center">
+         <div className="min-h-screen bg-linear-to-b from-yellow-300 via-yellow-500 to-orange-600 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
             <div className="bg-black/40 backdrop-blur-md border-white/60 rounded-4xl shadow-2xl/35 py-24 px-8 md:py-32 md:px-14 w-full max-w-5xl m-5">
                 <div className="m-4">
-                    <h1 className="text-white text-5xl text-center m-1">WELCOME TO</h1>
-                    <h1 className="text-white text-5xl text-center font-food m-4">Food4U!!</h1>
+                    <h1 className="text-white text-5xl md:text-5xl text-center m-1">WELCOME TO</h1>
+                    <h1 className="text-white text-5xl md:text-5xl text-center font-food m-4">Food4U!!</h1>
                     <h2 className="text-white underline text-3xl text-center">About us</h2>
                 </div>
                 <div className="bg-white/30 p-5 rounded-4xl">
