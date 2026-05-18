@@ -8,6 +8,7 @@ import FastFoods from './Pages/FastFoods'
 import Drinks from './Pages/Drinks'
 import BakedProducts from './Pages/BakedProducts'
 import Contactus from './Pages/ContactUs'
+import AdminPanel from './Pages/AdminPanel'
 import ProtectedRoutes from './Components/ProtectedRoutes'
 
 
@@ -26,6 +27,7 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
+
   const handleLogin = () => {
     fetch("https://food4u-api-u42t.onrender.com/users")
     .then(response => response.json())
@@ -42,15 +44,31 @@ function App() {
       } else {
         alert("Invalid Credentials!!!")
       }
+
+      const adminUser = users.find(
+        (userr) => userr.username === "admin_web" && userr.password === "pass11223344"
+      );
+
+      if(adminUser){
+        setUsername(adminUser.username);
+        setEmail(adminUser.email);
+        setDateOfBirth(adminUser.dateOfBirth);
+        navigate("/AdminPanel")
+      } else {
+        alert("Invalid Credentials!!!")
+      }
     })
     .catch((error) => console.error("Login error:", error))
   };
+
+
 
   const handleLogout = () => {
     setUsername("");
     setPassword("");
     setEmail("");
     setDateOfBirth("");
+    setUser(null);
     navigate("/")
   }
   
@@ -95,9 +113,49 @@ function App() {
     .then(response => response.json())
     .then(data => setBakedItems(data))
   }, []);
+
+  const addFastFoodItem = (newItem) => {
+    fetch("https://food4u-api-u42t.onrender.com/fastfoods", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    })
+    .then((response) => response.json())
+    .then((data) => setFastFoodItems([...fastFoodItems, data]))
+    .catch((error) => console.error("Error adding fast food item:", error));
+  };
+
+  const addDrinkItem = (newItem) => {
+    fetch("https://food4u-api-u42t.onrender.com/drinks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    })
+    .then((response) => response.json())
+    .then((data) => setDrinKsItems([...drinksItems, data]))
+    .catch((error) => console.error("Error adding drink item:", error));
+  };
+
+  const addBakedItem = (newItem) => {
+    fetch("https://food4u-api-u42t.onrender.com/bakedfoods", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    })
+    .then((response) => response.json())
+    .then((data) => setBakedItems([...bakedItems, data]))
+    .catch((error) => console.error("Error adding baked item:", error));
+  };
   
   return (
     <>
+
     {location.pathname !== '/' && location.pathname !== '/Register' && (
       <nav className='bg-linear-to-r from-orange-500 via-yellow-300 to-orange-500 backdrop-blur-md shadow-lg px-4 py-4 flex flex-wrap justify-center gap-4 sticky top-0 z-50 border-b border-red-500'>
         <Link to="/Dashboard" className="bg-white/30 px-4 py-3 rounded-2xl hover:bg-white/40 font-food text-base sm:text-lg">DashBoard</Link>
@@ -121,6 +179,9 @@ function App() {
         <Route path="/Contactus" element={<ProtectedRoutes userName={userName}>
           <Contactus />
           </ProtectedRoutes>} />
+        <Route path="/AdminPanel" element={<ProtectedRoutes userName={userName}>
+          <AdminPanel onAddFastFood={addFastFoodItem} onAddDrink={addDrinkItem} onAddBaked={addBakedItem} />
+        </ProtectedRoutes>}/>
      </Routes>
     </>
   )
