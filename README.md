@@ -1,18 +1,31 @@
-# React + Vite
+# FOOD4U
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a single-page web application for looking for food recipes
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Installation](###Installation)
+- [Technologies used](###Technologies)
+- [Usage](###Usage)
+- [Contributing](###Contributing)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+### Installation
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+This project is installed by clone the repository to your local machine. You can access it using your desired IDM.
 
-Note: This will impact Vite dev & build performances.
 
-## Expanding the ESLint configuration
+### Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project uses React together with vite. 
+Tailwind CSS has been applied to style the front-end bit of the web application.
+Deployment is done using a JSON server and react.com
+
+### Usage
+
+Once you enter the website, you are required to log in/register to gain access to the content.
+The website contains a dashboard, which is mostly used to look at user information and direct the user to where to go.
+The recipe page is where one can search for a category where you will search for specific recipes to your desire.
+
+### Contribution
+
+Ray Wekesa - developer of the web application.
